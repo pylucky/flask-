@@ -1,0 +1,122 @@
+{% extends 'index.html' %}
+
+
+{% block right  %}
+
+
+        <!-- 内容区域 -->
+
+<div class="tpl-content-wrapper">
+ 
+
+    <div class="container-fluid am-cf">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                <div class="page-header-heading">
+                    <span class="am-icon-home page-header-heading-icon"></span> 添加表单
+                </div>
+               
+            </div>
+           
+        </div>
+
+    </div>
+
+    <div class="row-content am-cf">
+    {{ data|safe }}
+
+
+    {{ error0|safe }}
+    {{ error1|safe }}
+    {{ error2|safe }}
+    {{ error3|safe }}
+
+        <div class="row">
+
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf" >
+                        <div class="widget-title am-fl">线条表单</div>
+
+                        <div class="widget-function am-fr">
+                            <a href="javascript:;" class="am-icon-cog"></a>
+                        </div>
+                    </div>
+                    <div class="widget-body am-fr">
+                    
+                    <form class="am-form tpl-form-line-form" method="post">
+                        
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Title</span></label>
+                                    <div class="am-u-sm-9">
+
+                                    
+                                        <input type="text"  name="authorname"  id="authorname" class="tpl-form-input" id="user-name" placeholder="请输入标题作者">
+                                        <small>请填写标题文字10-20字左右。</small>
+                                    </div>
+                                </div>
+
+                              
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">图书 <span class="tpl-form-line-small-title">Title</span></label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text"  name="bookname" class="tpl-form-input" id="user-name" placeholder="请输入标题书名">
+                                        <small>请填写标题文字10-20字左右。</small>
+                                    </div>
+                                </div>
+                              
+                              
+                               
+                    
+                               
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button    class="am-btn am-btn-primary tpl-btn-bg-color-success" >提交</button>
+                                    </div>
+                                </div>
+                    </form>
+                    
+                    </div>
+                </div>     
+            </div>
+        </div>
+    </div>
+     
+</div>
+
+<!-- <script type="text/javascript">
+    
+//把 作者加入下拉选项框
+
+ //1 获取输入框的 值
+
+$(".am-u-sm-9").find('input[id="authorname"]').change(function(){
+
+    //输入框值
+    var authorname=$(this).val()
+
+  
+    //2 获取下拉列表对象
+    var select=document.getElementById("s1")
+    //3 创建option节点 加值
+    var option=document.createElement("option")
+    option.value=authorname
+
+
+    option.innerHTML=authorname
+    //4 把 节点加入 下拉对象
+    select.appendChild(option)
+
+
+
+    
+ })
+
+</script> -->
+   
+    
+
+{% endblock right %}
+
